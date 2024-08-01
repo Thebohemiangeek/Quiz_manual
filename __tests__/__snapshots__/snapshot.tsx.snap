@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div>
+    <h1>
+      Welcome to Next.js!
+    </h1>
+    <p>
+      This is the landing page.
+    </p>
+  </div>
+</div>
+`;
