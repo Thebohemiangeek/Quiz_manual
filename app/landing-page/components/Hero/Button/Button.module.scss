@@ -1,0 +1,27 @@
+$button-color: #7e0707;
+
+.button {
+  background-color: $button-color;
+  color: white;
+  padding: 10px 20px;
+  font-size: 10px;
+  line-height: 15px;
+  text-transform: uppercase;
+  width: 200px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+
+  &:hover {
+    background-color: darken($button-color, 10%);
+  }
+  &:focus {
+    outline: none;
+  }
+}

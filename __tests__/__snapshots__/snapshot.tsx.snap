@@ -3,12 +3,43 @@
 exports[`renders homepage unchanged 1`] = `
 <div>
   <div>
-    <h1>
-      Welcome to Next.js!
-    </h1>
-    <p>
-      This is the landing page.
-    </p>
+    <div
+      class="hero"
+    >
+      <img
+        alt="Manual.co"
+        class="hero_logo"
+        data-nimg="1"
+        decoding="async"
+        height="40"
+        loading="lazy"
+        src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+        srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+        style="color: transparent;"
+        width="40"
+      />
+      <div
+        class="hero__caption"
+      >
+        <h1
+          class="hero__caption__title"
+        >
+          Be good 
+          <br />
+          to yourself
+        </h1>
+        <p
+          class="hero__caption__description"
+        >
+          We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
+        </p>
+        <button
+          class="button"
+        >
+          Take the Quiz
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
