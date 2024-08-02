@@ -5,6 +5,7 @@
   background-size: cover;
   height: 400px;
   padding: 30px;
+  padding-top: 39px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -28,7 +29,7 @@
   }
 }
 
-.hero__caption {
+.heroCaption {
   margin: 52.3px 0 60px;
 
   @media (min-width: 768px) {
@@ -36,7 +37,7 @@
   }
 }
 
-.hero__title {
+.heroTitle {
   font-family: Montserrat, sans-serif;
   max-width: 600px;
   font-size: 38px;
@@ -55,7 +56,7 @@
   }
 }
 
-.hero__description {
+.heroDescription {
   font-family: Montserrat, sans-serif;
   max-width: 400px;
   margin-top: 22px;

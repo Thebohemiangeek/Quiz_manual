@@ -6,7 +6,7 @@ import Modal from "app/landing-page/components/Modal/Modal";
 describe("Modal Component", () => {
   test("renders the modal when show is true", () => {
     render(
-      <Modal show={true} handleClose={() => {}} title="Test Modal">
+      <Modal show={true} handleClose={() => {}}>
         <p>Modal Content</p>
       </Modal>
     );
@@ -16,7 +16,7 @@ describe("Modal Component", () => {
 
   test("does not render the modal when show is false", () => {
     render(
-      <Modal show={false} handleClose={() => {}} title="Test Modal">
+      <Modal show={false} handleClose={() => {}}>
         <p>Modal Content</p>
       </Modal>
     );
@@ -27,7 +27,7 @@ describe("Modal Component", () => {
   test("calls handleClose when the close button is clicked", () => {
     const handleClose = jest.fn();
     render(
-      <Modal show={true} handleClose={handleClose} title="Test Modal">
+      <Modal show={true} handleClose={handleClose}>
         <p>Modal Content</p>
       </Modal>
     );
@@ -37,12 +37,7 @@ describe("Modal Component", () => {
 
   test("applies custom className if provided", () => {
     const { container } = render(
-      <Modal
-        show={true}
-        handleClose={() => {}}
-        className="custom-class"
-        title="Test Modal"
-      >
+      <Modal show={true} handleClose={() => {}} className="custom-class">
         <p>Modal Content</p>
       </Modal>
     );

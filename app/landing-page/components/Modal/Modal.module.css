@@ -13,10 +13,8 @@
 
 .modal {
   background: #fff;
-
   height: 100%;
   width: 100%;
-  padding: 20px;
   position: relative;
 }
 
@@ -24,7 +22,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .closeButton {
@@ -33,8 +30,4 @@
   font-size: 2rem;
   cursor: pointer;
   color: var(--title-green);
-}
-
-.modalBody {
-  /* Add any additional styles for the modal body */
 }

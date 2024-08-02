@@ -12,17 +12,17 @@ interface Props {
 const Hero: React.FC<Props> = ({ setShowQuizModal }) => {
   return (
     <div className={styles.hero}>
-      <Image src={logo} alt="Manual.co" className={styles.hero__logo} />
-      <div className={styles.hero__caption}>
-        <h1 className={styles.hero__title}>
+      <Image src={logo} alt="Manual.co" className={styles.heroLogo} />
+      <div className={styles.heroCaption}>
+        <h1 className={styles.heroTitle}>
           Be good <br />
           to yourself
         </h1>
-        <p className={styles.hero__description}>
+        <p className={styles.heroDescription}>
           We're working around the clock to bring you a holistic approach to
           your wellness. From top to bottom, inside and out.
         </p>
-        <Button onClick={() => setShowQuizModal(true)}>Take the Quiz</Button>
+        <Button onClick={() => setShowQuizModal(true)}></Button>
       </div>
     </div>
   );

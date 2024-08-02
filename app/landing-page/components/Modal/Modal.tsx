@@ -5,17 +5,10 @@ interface Props {
   className?: string;
   handleClose: () => void;
   show: boolean;
-  title?: string;
   children: React.ReactNode;
 }
 
-const Modal: React.FC<Props> = ({
-  className,
-  children,
-  handleClose,
-  title,
-  show,
-}) => {
+const Modal: React.FC<Props> = ({ className, children, handleClose, show }) => {
   if (!show) {
     return null;
   }
@@ -24,7 +17,7 @@ const Modal: React.FC<Props> = ({
     <div className={styles.modalOverlay}>
       <div className={`${styles.modal} ${className ? className : ""}`}>
         <div className={styles.modalHeader}>
-          <h2>{title}</h2>
+          <p>{}</p>
           <button className={styles.closeButton} onClick={handleClose}>
             ×
           </button>

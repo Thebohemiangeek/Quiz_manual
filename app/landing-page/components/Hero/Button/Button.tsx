@@ -1,30 +1,22 @@
 import React from "react";
-
-import styles from "./button.module.scss";
+import styles from "./button.module.css";
 
 interface Props {
-  variant: string;
   block?: boolean;
   className?: string;
+  onClick: React.MouseEventHandler<HTMLElement>;
   loading?: boolean;
-  rounded?: boolean;
-  shadow?: boolean;
-  disabled?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Button: React.FC<Props> = ({
-  block,
-  className,
-  loading,
-  rounded,
-  shadow,
-  variant,
-  ...props
-}) => {
+const Button: React.FC<Props> = ({ block, className, loading, onClick }) => {
   return (
-    <button className={styles.button} {...props}>
-      {loading ? <span>Loading...</span> : [props.children]}
+    <button
+      className={`${styles.button} ${className ? className : ""} ${
+        block ? styles.block : ""
+      } `}
+      onClick={onClick}
+    >
+      {loading ? <span>Loading...</span> : "Take the Quiz"}
     </button>
   );
 };
