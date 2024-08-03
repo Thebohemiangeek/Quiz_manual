@@ -14,15 +14,15 @@ const Modal: React.FC<Props> = ({ className, children, handleClose, show }) => {
   }
 
   return (
-    <div className={styles.modalOverlay}>
+    <div className={styles.modal__overlay}>
       <div className={`${styles.modal} ${className ? className : ""}`}>
-        <div className={styles.modalHeader}>
+        <div className={styles.modal__header}>
           <p>{}</p>
-          <button className={styles.closeButton} onClick={handleClose}>
+          <button className={styles.close__button} onClick={handleClose}>
             ×
           </button>
         </div>
-        <div className={styles.modalBody}>{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   );

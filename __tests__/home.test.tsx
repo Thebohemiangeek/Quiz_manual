@@ -25,7 +25,6 @@ describe("Home component", () => {
     const mockQuizData = { quiz: "test data" };
     const mockReadFile = mocked(fs.readFile);
     mockReadFile.mockResolvedValue(JSON.stringify(mockQuizData));
-    /* @ts-expect-error Server Component */
     const { findByText } = render(<Home />);
     //test error due to react testing library
     expect(await findByText("LandingPage Mock")).toBeInTheDocument();

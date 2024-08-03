@@ -8,7 +8,7 @@ exports[`renders LandingPage unchanged 1`] = `
     >
       <img
         alt="Manual.co"
-        class="heroLogo"
+        class="hero__logo"
         data-nimg="1"
         decoding="async"
         height="40"
@@ -19,17 +19,17 @@ exports[`renders LandingPage unchanged 1`] = `
         width="40"
       />
       <div
-        class="heroCaption"
+        class="hero__caption"
       >
         <h1
-          class="heroTitle"
+          class="hero__title"
         >
           Be good 
           <br />
           to yourself
         </h1>
         <p
-          class="heroDescription"
+          class="hero__text"
         >
           We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
         </p>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Hero from "./components/Hero/Hero";
 import Modal from "./components/Modal/Modal";
 import Quiz from "./components/Quiz/Quiz";
+import MainSection from "./components/Section/MainSection";
 import styles from "./components/Hero/hero.module.css"; // Adjust the import as needed
 
 interface LandingPageProps {
@@ -116,6 +117,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ quizData }) => {
       >
         <Quiz questions={questions} />
       </Modal>
+      <MainSection />
     </div>
   );
 };

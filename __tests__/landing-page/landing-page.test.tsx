@@ -53,8 +53,8 @@ describe("Landing Page", () => {
     const button = screen.getByRole("button");
     fireEvent.click(button);
 
-    const closeButton = screen.getByText("×");
-    fireEvent.click(closeButton);
+    const close__button = screen.getByText("×");
+    fireEvent.click(close__button);
 
     const modalQuestion = screen.queryByText(
       "Which image best matches your hair loss?"

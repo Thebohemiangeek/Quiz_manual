@@ -1,4 +1,4 @@
-.modalOverlay {
+.modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,16 +18,17 @@
   position: relative;
 }
 
-.modalHeader {
+.modal__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.closeButton {
+.close__button {
   background: none;
   border: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--title-green);
+  margin-right: 40px;
 }

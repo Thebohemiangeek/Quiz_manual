@@ -28,10 +28,10 @@ describe("Quiz Component", () => {
   test("renders the first question and options", () => {
     const { container } = render(<Quiz questions={questionsMock} />);
 
-    expect(container.querySelector(".quizLabel")).toHaveTextContent(
+    expect(container.querySelector(".quiz__label")).toHaveTextContent(
       "Question 1"
     );
-    expect(container.querySelector(".quizQuestionTitle")).toHaveTextContent(
+    expect(container.querySelector(".quiz__question_title")).toHaveTextContent(
       "What is your favorite color?"
     );
 

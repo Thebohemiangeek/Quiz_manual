@@ -12,13 +12,13 @@ interface Props {
 const Hero: React.FC<Props> = ({ setShowQuizModal }) => {
   return (
     <div className={styles.hero}>
-      <Image src={logo} alt="Manual.co" className={styles.heroLogo} />
-      <div className={styles.heroCaption}>
-        <h1 className={styles.heroTitle}>
+      <Image src={logo} alt="Manual.co" className={styles.hero__logo} />
+      <div className={styles.hero__caption}>
+        <h1 className={styles.hero__title}>
           Be good <br />
           to yourself
         </h1>
-        <p className={styles.heroDescription}>
+        <p className={styles.hero__text}>
           We're working around the clock to bring you a holistic approach to
           your wellness. From top to bottom, inside and out.
         </p>

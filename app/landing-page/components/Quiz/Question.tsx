@@ -31,15 +31,15 @@ const Question: React.FC<QuestionProps> = ({
   const renderOptions = (): React.ReactNode => {
     return options.map((option, index) => (
       <div
-        className={`${styles.quizItem} ${
-          userResponses[question] === option.value ? styles.quizSelected : ""
+        className={`${styles.quiz__item} ${
+          userResponses[question] === option.value ? styles.quiz__selected : ""
         }`}
         data-testid="option"
         key={index}
         onClick={() => handleSetResponse(question, option.value, number)}
       >
         <div
-          className={styles.quizLabel}
+          className={styles.quiz__label}
           dangerouslySetInnerHTML={{ __html: option.display }}
         ></div>
       </div>
@@ -52,9 +52,9 @@ const Question: React.FC<QuestionProps> = ({
 
   return (
     <div className={styles.quizModal_question} data-testid="question">
-      <h4 className={styles.quizLabel}>{`Question ${number}`}</h4>
-      <h1 className={styles.quizQuestionTitle}>{question}</h1>
-      <div className={styles.quizOptions} data-testid="options-list">
+      <h4 className={styles.quiz__label}>{`Question ${number}`}</h4>
+      <h1 className={styles.quiz__question_title}>{question}</h1>
+      <div className={styles.quiz__options} data-testid="options-list">
         {renderOptions()}
       </div>
     </div>

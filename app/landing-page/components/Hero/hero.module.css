@@ -29,7 +29,7 @@
   }
 }
 
-.heroCaption {
+.hero__caption {
   margin: 52.3px 0 60px;
 
   @media (min-width: 768px) {
@@ -37,8 +37,7 @@
   }
 }
 
-.heroTitle {
-  font-family: Montserrat, sans-serif;
+.hero__title {
   max-width: 600px;
   font-size: 38px;
   line-height: 1.2;
@@ -56,8 +55,7 @@
   }
 }
 
-.heroDescription {
-  font-family: Montserrat, sans-serif;
+.hero__text {
   max-width: 400px;
   margin-top: 22px;
   margin-left: 10px;

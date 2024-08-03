@@ -52,9 +52,9 @@ const Quiz: React.FC<Props> = ({ questions }) => {
   );
 
   return (
-    <div className={styles.quizContainer}>
-      <header className={styles.quizHeader}>
-        <Image src={logo} alt="Manual.co" className={styles.heroLogo} />
+    <div className={styles.quiz__container}>
+      <header className={styles.quiz__header}>
+        <Image src={logo} alt="Manual.co" className={styles.hero__logo} />
       </header>
       {!isCompleted && (
         <>
@@ -70,11 +70,11 @@ const Quiz: React.FC<Props> = ({ questions }) => {
               />
             ) : null
           )}
-          <div className={styles.navigationButtons}>
+          <div className={styles.nav__button_container}>
             {activeQuestion > 1 && (
               <button
                 onClick={handlePreviousQuestion}
-                className={styles.navButton}
+                className={styles.nav__button}
                 data-testid="previous-button"
               >
                 Previous
@@ -83,7 +83,7 @@ const Quiz: React.FC<Props> = ({ questions }) => {
             {currentQuestionAnswered && activeQuestion < questions.length && (
               <button
                 onClick={handleNextQuestion}
-                className={styles.navButton}
+                className={styles.nav__button}
                 data-testid="next-button"
               >
                 Next
@@ -92,7 +92,7 @@ const Quiz: React.FC<Props> = ({ questions }) => {
             {currentQuestionAnswered && activeQuestion === questions.length && (
               <button
                 onClick={handleSubmitQuiz}
-                className={styles.navButton}
+                className={styles.nav__button}
                 data-testid="submit-button"
               >
                 Submit
@@ -102,19 +102,19 @@ const Quiz: React.FC<Props> = ({ questions }) => {
         </>
       )}
       {isCompleted && (
-        <section className={styles.quizResult}>
+        <section className={styles.quiz__result}>
           {Object.values(userResponses).includes(true) ? (
-            <div className={styles.quizResult}>
+            <div className={styles.quiz__result}>
               <Image
                 src={doctor}
                 alt="Dr. Earim Chaudry"
-                className={styles.imageResults}
+                className={styles.image__results}
               />
               <p className={styles.imageText} data-testid="rejection-text">
                 Earim Chaudry, Medical director
               </p>
               <p
-                className={styles.quizResultMessage}
+                className={styles.quiz__result_message}
                 data-testid="rejection-message"
               >
                 Unfortunately, we are unable to prescribe this medication for
@@ -125,17 +125,17 @@ const Quiz: React.FC<Props> = ({ questions }) => {
               </p>
             </div>
           ) : (
-            <div className={styles.quizResult}>
+            <div className={styles.quiz__result}>
               <Image
                 src={doctor}
                 alt="Dr. Earim Chaudry"
-                className={styles.imageResults}
+                className={styles.image__results}
               />{" "}
               <p className={styles.imageText} data-testid="approval-text">
                 Earim Chaudry, Medical director
               </p>
               <p
-                className={styles.quizResultMessage}
+                className={styles.quiz__result_message}
                 data-testid="approval-message"
               >
                 Great news! We have the perfect treatment for your hair loss.
