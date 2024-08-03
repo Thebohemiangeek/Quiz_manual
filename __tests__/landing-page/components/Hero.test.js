@@ -4,24 +4,37 @@ import "@testing-library/jest-dom";
 import Hero from "app/landing-page/components/Hero/Hero";
 
 describe("Hero Component", () => {
-  test("renders the hero section with correct content", () => {
-    render(<Hero setShowQuizModal={() => {}} />);
+  const setShowQuizModal = jest.fn();
 
-    expect(screen.getByAltText("Manual.co")).toBeInTheDocument();
-    expect(screen.getByText("Be good to yourself")).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        "We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out."
-      )
-    ).toBeInTheDocument();
-    expect(screen.getByText("Take the Quiz")).toBeInTheDocument();
+  it("renders the hero section", () => {
+    render(<Hero setShowQuizModal={setShowQuizModal} />);
+
+    // Check if the hero section is rendered
+    const logoElement = screen.getByAltText("Manual.co");
+    expect(logoElement).toBeInTheDocument();
+
+    // Check if the title is rendered
+    const titleElement = screen.getByText(/Be good/i);
+    expect(titleElement).toBeInTheDocument();
+
+    // Check if the description is rendered
+    const descriptionElement = screen.getByText(
+      "We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out."
+    );
+    expect(descriptionElement).toBeInTheDocument();
+
+    // Check if the button is rendered
+    const buttonElement = screen.getByRole("button");
+    expect(buttonElement).toBeInTheDocument();
   });
 
-  test("calls setShowQuizModal when 'Take the Quiz' button is clicked", () => {
-    const setShowQuizModalMock = jest.fn();
-    render(<Hero setShowQuizModal={setShowQuizModalMock} />);
+  it("calls setShowQuizModal when the button is clicked", () => {
+    render(<Hero setShowQuizModal={setShowQuizModal} />);
 
-    fireEvent.click(screen.getByText("Take the Quiz"));
-    expect(setShowQuizModalMock).toHaveBeenCalledWith(true);
+    const buttonElement = screen.getByRole("button");
+    fireEvent.click(buttonElement);
+
+    expect(setShowQuizModal).toHaveBeenCalledTimes(1);
+    expect(setShowQuizModal).toHaveBeenCalledWith(true);
   });
 });

@@ -55,7 +55,7 @@
 
 .quizItem:hover {
   background-color: rgba(164, 182, 158, 0.3);
-  box-shadow: rgba(11, 59, 60, 1) 0px 0px 0px 2px inset;
+  box-shadow: rgba(11, 59, 60, 0.6) 0px 0px 0px 2px inset;
 }
 
 .quizSelected {
@@ -146,4 +146,26 @@
   .quizContainer {
     height: 750px;
   }
+}
+
+.navButton {
+  color: rgba(11, 59, 60, 1);
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 1;
+  will-change: opacity;
+  min-height: 50px;
+  height: 100%;
+  border-radius: 4px;
+  min-width: 100px;
+  background-color: rgba(164, 182, 158, 0.3);
+  margin: 0 10px;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }

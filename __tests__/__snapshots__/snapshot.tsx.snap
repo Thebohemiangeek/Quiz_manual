@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders homepage unchanged 1`] = `
+exports[`renders LandingPage unchanged 1`] = `
 <div>
   <div>
     <div
@@ -8,7 +8,7 @@ exports[`renders homepage unchanged 1`] = `
     >
       <img
         alt="Manual.co"
-        class="hero_logo"
+        class="heroLogo"
         data-nimg="1"
         decoding="async"
         height="40"
@@ -19,22 +19,22 @@ exports[`renders homepage unchanged 1`] = `
         width="40"
       />
       <div
-        class="hero__caption"
+        class="heroCaption"
       >
         <h1
-          class="hero__caption__title"
+          class="heroTitle"
         >
           Be good 
           <br />
           to yourself
         </h1>
         <p
-          class="hero__caption__description"
+          class="heroDescription"
         >
           We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
         </p>
         <button
-          class="button"
+          class="button   "
         >
           Take the Quiz
         </button>

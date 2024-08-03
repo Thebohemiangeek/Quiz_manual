@@ -1,20 +1,34 @@
-/**
- * @jest-environment jsdom
- */
-import { render, screen } from "@testing-library/react";
+import React from "react";
 import Home from "../app/page";
+import { promises as fs } from "fs";
+import { render } from "@testing-library/react";
+import LandingPage from "../app/landing-page/page";
+import { mocked } from "jest-mock";
 
-describe("Home Page", () => {
-  it("renders the landing page content", () => {
-    render(<Home />);
+jest.mock("fs", () => ({
+  promises: {
+    readFile: jest.fn(),
+  },
+}));
 
-    const heading = screen.getByRole("heading", {
-      name: /welcome to next\.js!/i,
-    });
+jest.mock("path", () => ({
+  ...jest.requireActual("path"),
+  resolve: jest.fn().mockReturnValue("/public/data/quiz.json"),
+}));
 
-    expect(heading).toBeInTheDocument();
+jest.mock("../app/landing-page/page", () =>
+  jest.fn(() => <div>LandingPage Mock</div>)
+);
 
-    const paragraph = screen.getByText("This is the landing page.");
-    expect(paragraph).toBeInTheDocument();
+describe("Home component", () => {
+  it("renders LandingPage with quiz data", async () => {
+    const mockQuizData = { quiz: "test data" };
+    const mockReadFile = mocked(fs.readFile);
+    mockReadFile.mockResolvedValue(JSON.stringify(mockQuizData));
+    /* @ts-expect-error Server Component */
+    const { findByText } = render(<Home />);
+    //test error due to react testing library
+    expect(await findByText("LandingPage Mock")).toBeInTheDocument();
+    expect(LandingPage).toHaveBeenCalledWith({ quizData: mockQuizData }, {});
   });
 });

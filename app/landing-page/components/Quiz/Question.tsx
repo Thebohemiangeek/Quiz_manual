@@ -51,7 +51,7 @@ const Question: React.FC<QuestionProps> = ({
   }
 
   return (
-    <div className={styles.quizModal_question}>
+    <div className={styles.quizModal_question} data-testid="question">
       <h4 className={styles.quizLabel}>{`Question ${number}`}</h4>
       <h1 className={styles.quizQuestionTitle}>{question}</h1>
       <div className={styles.quizOptions} data-testid="options-list">

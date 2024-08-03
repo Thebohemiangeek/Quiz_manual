@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Question from "./Question";
 import Image from "next/image";
 import logo from "public/Logo/logo.svg";
@@ -24,48 +24,83 @@ const Quiz: React.FC<Props> = ({ questions }) => {
   }>({});
   const [isCompleted, setIsCompleted] = useState(false);
 
-  useEffect(() => {
-    if (Object.keys(userResponses).length === questions.length) {
-      handleSubmitQuiz();
-    }
-  }, [userResponses, questions.length]);
-
-  const handleSetResponse = (
-    question: string,
-    response: string | boolean,
-    questionNumber: number
-  ) => {
+  const handleSetResponse = (question: string, response: string | boolean) => {
     setUserResponses((prevResponses) => ({
       ...prevResponses,
       [question]: response,
     }));
-
-    if (questionNumber < questions.length) {
-      setActiveQuestion(questionNumber + 1);
-    }
   };
 
   const handleSubmitQuiz = () => {
     setIsCompleted(true);
   };
 
+  const handlePreviousQuestion = () => {
+    if (activeQuestion > 1) {
+      setActiveQuestion(activeQuestion - 1);
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (activeQuestion < questions.length) {
+      setActiveQuestion(activeQuestion + 1);
+    }
+  };
+
+  const currentQuestionAnswered = userResponses.hasOwnProperty(
+    questions[activeQuestion - 1].question
+  );
+
   return (
     <div className={styles.quizContainer}>
       <header className={styles.quizHeader}>
         <Image src={logo} alt="Manual.co" className={styles.heroLogo} />
       </header>
-      {!isCompleted &&
-        questions.map((item, index) => (
-          <Question
-            userResponses={userResponses}
-            handleSetResponse={handleSetResponse}
-            key={item.question.replace(" ", "+")}
-            data={item}
-            number={index + 1}
-            activeQuestion={activeQuestion}
-          />
-        ))}
-
+      {!isCompleted && (
+        <>
+          {questions.map((item, index) =>
+            index + 1 === activeQuestion ? (
+              <Question
+                userResponses={userResponses}
+                handleSetResponse={handleSetResponse}
+                key={item.question.replace(" ", "+")}
+                data={item}
+                number={index + 1}
+                activeQuestion={activeQuestion}
+              />
+            ) : null
+          )}
+          <div className={styles.navigationButtons}>
+            {activeQuestion > 1 && (
+              <button
+                onClick={handlePreviousQuestion}
+                className={styles.navButton}
+                data-testid="previous-button"
+              >
+                Previous
+              </button>
+            )}
+            {currentQuestionAnswered && activeQuestion < questions.length && (
+              <button
+                onClick={handleNextQuestion}
+                className={styles.navButton}
+                data-testid="next-button"
+              >
+                Next
+              </button>
+            )}
+            {currentQuestionAnswered && activeQuestion === questions.length && (
+              <button
+                onClick={handleSubmitQuiz}
+                className={styles.navButton}
+                data-testid="submit-button"
+              >
+                Submit
+              </button>
+            )}
+          </div>
+        </>
+      )}
       {isCompleted && (
         <section className={styles.quizResult}>
           {Object.values(userResponses).includes(true) ? (
@@ -75,10 +110,13 @@ const Quiz: React.FC<Props> = ({ questions }) => {
                 alt="Dr. Earim Chaudry"
                 className={styles.imageResults}
               />
-              <p className={styles.imageText}>
+              <p className={styles.imageText} data-testid="rejection-text">
                 Earim Chaudry, Medical director
               </p>
-              <p className={styles.quizResultMessage}>
+              <p
+                className={styles.quizResultMessage}
+                data-testid="rejection-message"
+              >
                 Unfortunately, we are unable to prescribe this medication for
                 you. This is because finasteride can alter the PSA levels, which
                 may be used to monitor for cancer. You should discuss this
@@ -93,10 +131,13 @@ const Quiz: React.FC<Props> = ({ questions }) => {
                 alt="Dr. Earim Chaudry"
                 className={styles.imageResults}
               />{" "}
-              <p className={styles.imageText}>
+              <p className={styles.imageText} data-testid="approval-text">
                 Earim Chaudry, Medical director
               </p>
-              <p className={styles.quizResultMessage}>
+              <p
+                className={styles.quizResultMessage}
+                data-testid="approval-message"
+              >
                 Great news! We have the perfect treatment for your hair loss.
                 Proceed to{" "}
                 <a
