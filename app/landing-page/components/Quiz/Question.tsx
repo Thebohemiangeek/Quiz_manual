@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Quiz.module.css";
+import parse from "html-react-parser";
+import DOMPurify from "dompurify";
 
 interface QuestionProps {
   data: {
@@ -29,21 +31,24 @@ const Question: React.FC<QuestionProps> = ({
   userResponses,
 }) => {
   const renderOptions = (): React.ReactNode => {
-    return options.map((option, index) => (
-      <div
-        className={`${styles.quiz__item} ${
-          userResponses[question] === option.value ? styles.quiz__selected : ""
-        }`}
-        data-testid="option"
-        key={index}
-        onClick={() => handleSetResponse(question, option.value, number)}
-      >
+    return options.map((option, index) => {
+      const sanitizedHtml = DOMPurify.sanitize(option.display);
+      return (
         <div
-          className={styles.quiz__label}
-          dangerouslySetInnerHTML={{ __html: option.display }}
-        ></div>
-      </div>
-    ));
+          className={`${styles.quiz__item} ${
+            userResponses[question] === option.value
+              ? styles.quiz__selected
+              : ""
+          }`}
+          data-testid="option"
+          key={index}
+          onClick={() => handleSetResponse(question, option.value, number)}
+          aria-label={option.value}
+        >
+          <div className={styles.quiz__label}>{parse(option.display)}</div>
+        </div>
+      );
+    });
   };
 
   if (number !== activeQuestion) {
@@ -51,7 +56,7 @@ const Question: React.FC<QuestionProps> = ({
   }
 
   return (
-    <div className={styles.quizModal_question} data-testid="question">
+    <div className={styles.quiz__question_container} data-testid="question">
       <h4 className={styles.quiz__label}>{`Question ${number}`}</h4>
       <h1 className={styles.quiz__question_title}>{question}</h1>
       <div className={styles.quiz__options} data-testid="options-list">

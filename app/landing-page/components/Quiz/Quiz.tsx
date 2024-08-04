@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Question from "./Question";
 import Image from "next/image";
-import logo from "public/Logo/logo.svg";
 import styles from "./Quiz.module.css";
 import doctor from "public/img/clinician.png";
 
@@ -53,9 +52,6 @@ const Quiz: React.FC<Props> = ({ questions }) => {
 
   return (
     <div className={styles.quiz__container}>
-      <header className={styles.quiz__header}>
-        <Image src={logo} alt="Manual.co" className={styles.hero__logo} />
-      </header>
       {!isCompleted && (
         <>
           {questions.map((item, index) =>

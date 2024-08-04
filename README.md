@@ -1,31 +1,23 @@
-# Next.js + Jest
+# Next.js + Quiz Manual app
 
-This example shows how to configure Jest to work with Next.js.
+This is an app built for the Manual.co coding challenge.
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
+This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.Includes JEST and react testing library.
 
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
+## Deployed in Vercel
 
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
+Check out the deployed app at: [https://user-quiz-hazel.vercel.app/](https://user-quiz-hazel.vercel.app/)
 
 ## How to Use
-
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
 
 In your terminal, run the following command:
 
 ```bash
-npx create-next-app --example with-jest with-jest-app
+npm install
 ```
 
 ```bash
-yarn create next-app --example with-jest with-jest-app
-```
-
-```bash
-pnpm create next-app --example with-jest with-jest-app
+npm run dev
 ```
 
 ## Running Tests
@@ -34,34 +26,72 @@ pnpm create next-app --example with-jest with-jest-app
 npm test
 ```
 
-```
-with-jest-app
-├─ .gitignore
-├─ .swc
-│  └─ plugins
-│     └─ v7_windows_x86_64_0.106.15
+```project-tree
+
+Manual-app
+├─ app
+│  ├─ landing-page
+│  │  ├─ components
+│  │  │  ├─ Footer
+│  │  │  │  ├─ Footer.module.css
+│  │  │  │  └─ Footer.tsx
+│  │  │  ├─ Hero
+│  │  │  │  ├─ Button
+│  │  │  │  │  ├─ Button.module.css
+│  │  │  │  │  └─ Button.tsx
+│  │  │  │  ├─ hero.module.css
+│  │  │  │  └─ Hero.tsx
+│  │  │  ├─ Modal
+│  │  │  │  ├─ Modal.module.css
+│  │  │  │  └─ Modal.tsx
+│  │  │  ├─ Quiz
+│  │  │  │  ├─ Question.tsx
+│  │  │  │  ├─ Quiz.module.css
+│  │  │  │  └─ Quiz.tsx
+│  │  │  └─ Section
+│  │  │     ├─ MainSection.tsx
+│  │  │     ├─ Section.module.css
+│  │  │     └─ Section.tsx
+│  │  └─ page.tsx
+│  ├─ layout.tsx
+│  └─ page.tsx
 ├─ jest.config.js
 ├─ jest.setup.js
 ├─ package-lock.json
 ├─ package.json
 ├─ public
+│  ├─ data
+│  │  ├─ footer.json
+│  │  ├─ quiz.json
+│  │  └─ section.json
 │  ├─ favicon.ico
-│  └─ vercel.svg
+│  ├─ fonts
+│  │  ├─ TT Norms Pro Light.otf
+│  │  ├─ TT Norms Pro Medium.otf
+│  │  ├─ TT_Norms_Pro_Bold.otf
+│  │  └─ TT_Norms_Pro_Regular.otf
+│  ├─ img
+│  │  ├─ clinician.png
+│  │  ├─ erectiledisfunction.png
+│  │  ├─ hairlossman.png
+│  │  └─ HeroBackground.png
+│  └─ Logo
+│     └─ Logo.svg
 ├─ README.md
-├─ src
-│  ├─ app
-│  │  ├─ index.module.css
-│  │  ├─ layout.tsx
-│  │  └─ _app.tsx
-│  └─ pages
-│     └─ home
-│        └─ index.tsx
 ├─ styles
 │  └─ global.css
 ├─ tsconfig.json
 ├─ types.d.ts
 └─ __tests__
-   ├─ index.test.tsx
+   ├─ landing-page
+   │  ├─ components
+   │  │  ├─ Footer.test.tsx
+   │  │  ├─ Hero.test.tsx
+   │  │  ├─ Modal.test.tsx
+   │  │  ├─ Question.test.tsx
+   │  │  ├─ Quiz.test.tsx
+   │  │  └─ Section.test.tsx
+   │  └─ landing-page.test.tsx
    ├─ snapshot.tsx
    └─ __snapshots__
       └─ snapshot.tsx.snap

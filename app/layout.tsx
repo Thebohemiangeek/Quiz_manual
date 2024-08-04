@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 
 export const metadata = {
   title: "Manual.co Quiz page",
-  description: "Want to see  ",
+  description: "Want to see if you can fix your hair loss? ",
 };
 const myFont = localFont({
   src: "../public/fonts/TT_Norms_Pro_Regular.otf",

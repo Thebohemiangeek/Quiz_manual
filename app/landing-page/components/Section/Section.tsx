@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./Section.module.css";
 import Hairloss from "public/img/hairlossman.png";
-import ErectionMan from "public/img/erectionman.png";
+import erectiledisfunction from "public/img/erectiledisfunction.png";
 import data from "public/data/section.json";
 
 interface SectionProps {
@@ -12,7 +12,7 @@ interface SectionProps {
 // Mapping keys to actual image imports
 const imageMap = {
   hairLoss: Hairloss,
-  erectileDysfunction: ErectionMan,
+  erectileDysfunction: erectiledisfunction,
 };
 
 const Section = ({ identifier, reversed }: SectionProps) => {

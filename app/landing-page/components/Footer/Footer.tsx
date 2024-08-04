@@ -1,7 +1,7 @@
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
-import logo from "public/Logo/logo.svg";
+import logo from "public/Logo/Logo.svg";
 import Image from "next/image";
-import styles from "./footer.module.css";
+import styles from "./Footer.module.css";
 import data from "public/data/footer.json";
 
 const Footer = () => {
@@ -22,9 +22,9 @@ const Footer = () => {
           <div>
             <span className={styles.footer_socialMedia__title}>Follow us</span>
             <div className={styles.footer_socialMedia__list}>
-              <FaGoogle />
-              <FaFacebookF />
-              <FaTwitter />
+              <FaGoogle data-testid="fa-google" />
+              <FaFacebookF data-testid="fa-facebook-f" />
+              <FaTwitter data-testid="fa-twitter" />
             </div>
           </div>
         </div>
@@ -38,4 +38,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;
