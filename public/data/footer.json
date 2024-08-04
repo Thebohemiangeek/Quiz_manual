@@ -1,0 +1,30 @@
+{
+  "links": [
+    {
+      "name": "Product",
+      "items": [
+        { "name": "Popular" },
+        { "name": "Trending" },
+        { "name": "Guide" },
+        { "name": "Products" }
+      ]
+    },
+    {
+      "name": "Company",
+      "items": [
+        { "name": "Press" },
+        { "name": "Mission" },
+        { "name": "Strategy" },
+        { "name": "About" }
+      ]
+    },
+    {
+      "name": "Info",
+      "items": [
+        { "name": "Support" },
+        { "name": "Customer Service" },
+        { "name": "Get started" }
+      ]
+    }
+  ]
+}
