@@ -6,7 +6,7 @@ This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScri
 
 ## Deployed in Vercel
 
-Check out the deployed app at: [https://user-quiz-hazel.vercel.app/](https://user-quiz-hazel.vercel.app/)
+Check out the deployed app at: [https://quiz-manual.vercel.app/)
 
 ## How to Use
 
