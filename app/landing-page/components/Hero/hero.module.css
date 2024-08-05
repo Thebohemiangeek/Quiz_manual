@@ -19,13 +19,13 @@
   @media (min-width: 768px) {
     height: 520px;
     padding: 100px;
-    color: var(--title-green);
+    color: var(--main-green);
   }
 
   @media (min-width: 868px) {
     height: 750px;
     padding: 100px;
-    color: var(--title-green);
+    color: var(--main-green);
   }
 }
 

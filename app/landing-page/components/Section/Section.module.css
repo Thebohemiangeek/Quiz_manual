@@ -29,7 +29,7 @@
 }
 
 .section_title {
-  color: var(--title-green);
+  color: var(--main-green);
   margin: 35px auto;
   line-height: 1.2;
   font-size: 35px;
@@ -39,7 +39,7 @@
 }
 
 .section_text {
-  color: var(--title-green);
+  color: var(--main-green);
   font-weight: 300;
   font-size: 18px;
   line-height: 1.5;

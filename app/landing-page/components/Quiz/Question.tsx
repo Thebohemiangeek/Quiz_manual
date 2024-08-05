@@ -43,7 +43,13 @@ const Question: React.FC<QuestionProps> = ({
           data-testid="option"
           key={index}
           onClick={() => handleSetResponse(question, option.value, number)}
-          aria-label={option.value}
+          aria-label={
+            typeof option.value === "boolean"
+              ? option.value
+                ? "Yes"
+                : "No"
+              : option.value
+          }
         >
           <div className={styles.quiz__label}>{parse(option.display)}</div>
         </div>

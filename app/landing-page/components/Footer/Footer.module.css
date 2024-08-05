@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  color: #0b3b3c;
+  color: var(--main-green);
   margin-top: 32px;
 }
 

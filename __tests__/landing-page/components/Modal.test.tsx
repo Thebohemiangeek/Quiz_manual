@@ -15,7 +15,7 @@ describe("Modal Component", () => {
     );
 
     expect(screen.getByText("Modal Content")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "×" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Close" })).toBeInTheDocument();
   });
 
   it("does not render the modal when show is false", () => {
@@ -35,7 +35,7 @@ describe("Modal Component", () => {
       </Modal>
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "×" }));
+    fireEvent.click(screen.getByRole("button", { name: "Close" }));
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 
